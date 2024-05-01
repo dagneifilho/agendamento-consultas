@@ -9,12 +9,15 @@ class Paciente extends Model
 {
     use HasFactory;
     protected $fillable = [
-      'nome',
-      'cpf',
-      'email',
-      'cep',
+        'nome',
+        'cpf',
+        'dataNascimento',
+        'email',
+        'cep',
         'endereco',
-        'numero'
+        'numero',
+        'nome_responsavel',
+        'cpf_responsavel'
     ];
 
     public function telefones() {

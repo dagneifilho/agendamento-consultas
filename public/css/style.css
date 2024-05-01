@@ -1,0 +1,27 @@
+#main-container{
+    margin: 0 auto;
+    padding: 50px;
+}
+#main-container h1 {
+    text-align: center;
+}
+
+#especialidades-container,#pacientes-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#pacientes-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#telefones-container{
+    max-width: 300px;
+    margin: 0 auto;
+}
+#paginacao {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+

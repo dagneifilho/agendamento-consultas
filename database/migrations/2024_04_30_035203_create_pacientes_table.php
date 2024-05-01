@@ -16,9 +16,12 @@ return new class extends Migration
             $table->string('nome');
             $table->string('cpf');
             $table->string('email');
+            $table->date('dataNascimento');
             $table->string('cep');
-            $table->string('endereco');
+            $table->string('endereco')->nullable();
             $table->integer('numero')->default(0);
+            $table->string('nome_responsavel')->nullable();
+            $table->string('cpf_responsavel')->nullable();
             $table->timestamps();
         });
     }

@@ -12,8 +12,8 @@ class Medico extends Model
         'nome',
         'crm'
     ];
-    public function especialidades() {
-        return $this->belongsToMany(Especialidade::class, 'medicos_especialidades')->withTimestamps();
+    public function especialidade() {
+        return $this->belongsTo(Especialidade::class);
     }
     public function consultas() {
         return $this->hasMany(Consulta::class);

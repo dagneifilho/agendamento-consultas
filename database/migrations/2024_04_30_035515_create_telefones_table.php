@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('telefones', function (Blueprint $table) {
             $table->id();
-            $table->integer('ddd');
             $table->string('numero');
             $table->string('descricao')->nullable();
             $table->bigInteger('paciente_id')->unsigned()->nullable();
