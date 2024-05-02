@@ -16,7 +16,12 @@ class EspecialidadesService implements EspecialidadesServiceInterface
         Especialidade::create(['nome'=>$nome]);
     }
 
-    public function getAll(): null | LengthAwarePaginator
+    public function getAll()
+    {
+        return Especialidade::all()->toArray();
+    }
+
+    public function getPaginado(): null | LengthAwarePaginator
     {
         $especialidades = Especialidade::all();
         if($especialidades->isEmpty()){

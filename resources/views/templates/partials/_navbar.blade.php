@@ -10,7 +10,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Medicos</a>
+                    <a class="nav-link" href="{{route('medicos.index')}}">Medicos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('especialidades.index')}}">Especialidades</a>

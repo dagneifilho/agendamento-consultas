@@ -56,7 +56,7 @@ function verificaIdade() {
     let divResponsavel = document.getElementById('container-responsavel')
     let idade = calcularIdade(dataNascimento)
     console.log(idade)
-    if(idade <= 12 && divResponsavel.children.length === 0){
+    if(idade <= 18 && divResponsavel.children.length === 0){
 
         let newDiv = document.createElement('div')
         newDiv.innerHTML=`<label for="nome_responsavel" class="form-label">Nome do Responsável</label>

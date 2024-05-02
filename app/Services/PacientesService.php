@@ -9,7 +9,12 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class PacientesService implements  PacientesServiceInterface
 {
-
+    /**
+     * Grava os dados de um paciente.
+     *
+     * @param array $data Dados do cliente
+     * @return int Id do cliente salvo no banco
+     */
     public function storePaciente(array $data): int
     {
 
@@ -36,6 +41,11 @@ class PacientesService implements  PacientesServiceInterface
         return $paciente->id;
     }
 
+    /**
+     * Busa todos pacientes no banco de dados
+     *
+     * @return array|null Retorna um Array de PacienteVm, juntamente com os links para a paginação
+     */
     public function getAll(): array | null
     {
         $pacientes = Paciente::all();
@@ -57,6 +67,12 @@ class PacientesService implements  PacientesServiceInterface
         return ['pacientes'=>$pacientesVm,'links'=>$links];
     }
 
+    /**
+     * Busca um paciente pelo Id
+     *
+     * @param int $id
+     * @return object|PacienteViewModel|null
+     */
     public function getById(int $id): ?object
     {
         $paciente = Paciente::find($id);

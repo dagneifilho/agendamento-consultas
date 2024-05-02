@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MedicosController;
 use App\Http\Controllers\PacientesController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,11 @@ Route::controller(PacientesController::class)->group(function () {
    Route::get('/pacientes/create', 'create')->name('pacientes.create');
    Route::post('/pacientes', 'store')->name('pacientes.store');
    Route::get('/pacientes/{id}', 'show')->name('pacientes.show');
+});
+
+Route::controller(MedicosController::class)->group(function () {
+    Route::get('/medicos', 'index')->name('medicos.index');
+    Route::get('/medicos/create', 'create')->name('medicos.create');
+    Route::post('/medicos', 'store')->name('medicos.store');
+    Route::get('/medicos/{id}', 'show')->name('medicos.show');
 });

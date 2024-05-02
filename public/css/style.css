@@ -6,12 +6,12 @@
     text-align: center;
 }
 
-#especialidades-container,#pacientes-container {
+#especialidades-container,#pacientes-container, #medicos-container {
     max-width: 600px;
     margin: 0 auto;
 }
 
-#pacientes-form-container {
+#pacientes-form-container, #medicos-form-container{
     max-width: 600px;
     margin: 0 auto;
 }
@@ -25,3 +25,7 @@
     margin: 0 auto;
 }
 
+#list-header{
+    display: flex;
+    margin: 0 auto;
+}

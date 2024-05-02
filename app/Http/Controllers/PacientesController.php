@@ -27,7 +27,7 @@ class PacientesController extends Controller
     public function store(PacienteStoreRequest $request) {
         $id = $this->pacientesService->storePaciente($request->all());
 
-        flash('Paciente cadastrado com sucesso!');
+        flash('Paciente cadastrado com sucesso!')->success();
         return redirect()->route('pacientes.show',['id'=>$id]);
     }
     public function show(int $id) {

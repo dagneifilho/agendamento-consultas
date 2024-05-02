@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('crm');
             $table->string('nome');
-            $table->bigInteger('especialidades_id')->unsigned()->nullable();
+            $table->bigInteger('especialidade_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('especialidades_id')->references('id')->on('especialidades');
+            $table->foreign('especialidade_id')->references('id')->on('especialidades');
         });
     }
 

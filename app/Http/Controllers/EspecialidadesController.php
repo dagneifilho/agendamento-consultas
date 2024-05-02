@@ -14,7 +14,7 @@ class EspecialidadesController extends Controller
         $this->especialidadesService = $especialidadesService;
     }
     public function index() {
-        $especialidades = $this->especialidadesService->getAll();
+        $especialidades = $this->especialidadesService->getPaginado();
         return view('especialidades.index')->with('especialidades', $especialidades);
     }
 

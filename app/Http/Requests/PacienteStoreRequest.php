@@ -43,7 +43,7 @@ class PacienteStoreRequest extends FormRequest
             'string',
             Rule::requiredIf(function() {
                 $idade = $this->calcularIdade($this->input('dataNascimento'));
-                return $idade < 12;
+                return $idade < 18;
             }),
         ];
     }
