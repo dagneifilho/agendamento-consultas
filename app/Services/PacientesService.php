@@ -46,10 +46,10 @@ class PacientesService implements  PacientesServiceInterface
      *
      * @return array|null Retorna um Array de PacienteVm, juntamente com os links para a paginação
      */
-    public function getAll(): array | null
+    public function getPaginado(): array | null
     {
         $pacientes = Paciente::all();
-        if(!$pacientes)
+        if(count($pacientes)=== 0)
             return null;
         $pacientes =  $pacientes->toQuery()->paginate(10);
         $links = $pacientes->links();
@@ -84,5 +84,20 @@ class PacientesService implements  PacientesServiceInterface
         $pacienteVm->setTelefones($paciente->telefones->toArray());
 
         return $pacienteVm;
+    }
+
+    public function getAll(): array|null
+    {
+        $pacientesDb = Paciente::all();
+        if(count($pacientesDb)===0)
+            return null;
+        $pacientesVm=[];
+        foreach($pacientesDb as $paciente){
+            $pacienteVm =PacienteViewModel::fromData($paciente->toArray());
+            $telefones = $paciente->telefones;
+            $pacienteVm->setTelefones($telefones->toArray());
+            $pacientesVm[] =$pacienteVm;
+        }
+        return $pacientesVm;
     }
 }

@@ -15,9 +15,12 @@ class PacientesController extends Controller
         $this->pacientesService = $pacientesService;
     }
     public function index() {
-        $rtn = $this->pacientesService->getAll();
-        $pacientes = $rtn['pacientes'];
-        $links = $rtn['links'];
+        $rtn = $this->pacientesService->getPaginado();
+
+        $pacientes = isset($rtn['pacientes'])?$rtn['pacientes']:null;
+        $links = isset($rtn['links'])?$rtn['links']:null;
+
+
         return view('pacientes.index')->with('pacientes',$pacientes)->with('links',$links);
     }
     public function create() {

@@ -18,9 +18,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("pacientes.index")}}">Pacientes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Consultas</a>
-                </li>
             </ul>
         </div>
     </div>

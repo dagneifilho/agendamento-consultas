@@ -16,30 +16,27 @@ class CpfValido implements ValidationRule
     {
         $cpf = preg_replace('/[^0-9]/', '', $value);
 
-        if(strlen($cpf)!=11)
+        if(strlen($cpf) != 11)
             $fail("O $attribute deve conter 11 dígitos.");
 
         $soma = 0;
-        for($i=0;$i<9;$i++){
-            $soma += ($cpf[$i] * (10-$i));
-        }
-        $resto = $soma%11;
-
-        $digito1 = 0;
-        if($resto>2)
-            $digito1 = 11 - $resto;
-
-        $soma = 0;
-        for($i=0;$i<10;$i++){
-            $soma += ($cpf[$i] * (11-$i));
+        for($i = 0; $i < 9; $i++) {
+            $soma += ($cpf[$i] * (10 - $i));
         }
         $resto = $soma % 11;
 
-        $digito2 = 0;
-        if($resto>2)
-            $digito2 = 11 - $resto;
+        $digito1 = ($resto > 1) ? (11 - $resto) : 0;
 
-        if(($cpf[9]!=$digito1) || ($cpf[10]!=$digito2))
+        $soma = 0;
+        for($i = 0; $i < 10; $i++) {
+            $soma += ($cpf[$i] * (11 - $i));
+        }
+        $resto = $soma % 11;
+
+        $digito2 = ($resto > 1) ? (11 - $resto) : 0;
+
+        if(($cpf[9] != $digito1) || ($cpf[10] != $digito2))
             $fail("O $attribute informado é inválido.");
+
     }
 }

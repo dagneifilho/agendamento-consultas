@@ -36,8 +36,8 @@
                 </div>
             </div>
             <div role="group" class="mt-3">
-                <a href="#">
-                    <button type="button" class="btn btn-primary">Agendar Consulta</button>
+                <a href="{{route('consultas.pacientes',['id'=>$paciente->id])}}">
+                    <button type="button" class="btn btn-primary">Visualizar agendamentos</button>
                 </a>
                 <a href="{{route('pacientes.index')}}">
                     <button type="button" class="btn btn-secondary">Voltar</button>

@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-#especialidades-container,#pacientes-container, #medicos-container {
+#especialidades-container,#pacientes-container, #medicos-container, #consultas-container {
     max-width: 600px;
     margin: 0 auto;
 }

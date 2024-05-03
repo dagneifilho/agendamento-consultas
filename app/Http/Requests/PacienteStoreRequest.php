@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\Util;
 use App\Rules\CpfValido;
 use DateTime;
 use Illuminate\Foundation\Http\FormRequest;
@@ -42,7 +43,7 @@ class PacienteStoreRequest extends FormRequest
             'sometimes',
             'string',
             Rule::requiredIf(function() {
-                $idade = $this->calcularIdade($this->input('dataNascimento'));
+                $idade = Util::calculaIdade($this->input('dataNascimento'));
                 return $idade < 18;
             }),
         ];
@@ -52,12 +53,5 @@ class PacienteStoreRequest extends FormRequest
         $rules[] = new CpfValido();
 
         return $rules;
-    }
-    private function calcularIdade(string $data): int {
-        $dataNascimento = new DateTime($data);
-        $hoje = new DateTime();
-
-        $intervalo = $dataNascimento->diff($hoje);
-        return $intervalo->y;
     }
 }

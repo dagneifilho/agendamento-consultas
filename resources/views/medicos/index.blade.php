@@ -6,7 +6,7 @@
         @if(!$medicos)
             <div class="d-flex align-items-center justify-content-center vh-100">
                 <div class="alert alert-dark">
-                    Ainda não existem médicos cadastrados. Clique <a href="{{route('medicos.create')}}" class="alert-link">aqui</a> para cadastrar...
+                    Ainda não existem médicos cadastrados ou você fez uma busca que não trouxe resultados. Clique <a href="{{route('medicos.create')}}" class="alert-link">aqui</a> para cadastrar...
                 </div>
             </div>
         @else
