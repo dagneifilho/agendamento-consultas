@@ -42,7 +42,7 @@ class PacientesService implements  PacientesServiceInterface
     }
 
     /**
-     * Busca todos pacientes no banco de dados
+     * Faz uma busca paginada por pacientes no banco de dados, trazendo 10 registros por página
      *
      * @return array|null Retorna um Array de PacienteVm, juntamente com os links para a paginação
      */
@@ -86,6 +86,11 @@ class PacientesService implements  PacientesServiceInterface
         return $pacienteVm;
     }
 
+    /**
+     * Busca todos os pacientes no banco de dados.
+     *
+     * @return array|null PacienteViewModel
+     */
     public function getAll(): array|null
     {
         $pacientesDb = Paciente::all();

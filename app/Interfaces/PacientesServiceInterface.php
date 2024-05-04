@@ -4,6 +4,10 @@ namespace App\Interfaces;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
+/**
+ * Interface responsável por manipular dados de Pacientes
+ *
+ */
 interface PacientesServiceInterface
 {
     public function storePaciente(array $data): int;

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class CpfValido implements ValidationRule
 {
     /**
-     * Run the validation rule.
+     * Verifica se um cpf é válido a partir do cálculo dos dígitos verificadores.
      *
      * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
      */

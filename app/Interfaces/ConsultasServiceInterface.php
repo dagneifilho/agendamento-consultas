@@ -4,6 +4,10 @@ namespace App\Interfaces;
 
 use App\ViewModels\ConsultaViewModel;
 
+/**
+ * Interface responsável por manipular dados de Consultas
+ *
+ */
 interface ConsultasServiceInterface
 {
     public function getConsultaById(int $id): ConsultaViewModel|null;

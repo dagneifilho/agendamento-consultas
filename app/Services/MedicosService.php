@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\DB;
 
 class MedicosService implements MedicosServiceInterface
 {
+    /**
+     * Faz uma busca paginada por médicos, trazendo até 10 registros por página.
+     *
+     * @param string|null $query Parâmetro de busca, podendo ser Nome do médico, CRM ou Especialidade
+     * @return array|null
+     */
 
     public function getPaginado(?string $query = null): ?array
     {
@@ -35,6 +41,7 @@ class MedicosService implements MedicosServiceInterface
           'medicosVm'=>$medicosVm
         ];
     }
+
 
     public function getAll(?array $query = null): array
     {
