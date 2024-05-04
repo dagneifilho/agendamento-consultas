@@ -42,7 +42,7 @@ class PacientesService implements  PacientesServiceInterface
     }
 
     /**
-     * Busa todos pacientes no banco de dados
+     * Busca todos pacientes no banco de dados
      *
      * @return array|null Retorna um Array de PacienteVm, juntamente com os links para a paginação
      */

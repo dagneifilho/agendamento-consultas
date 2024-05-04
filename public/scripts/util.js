@@ -2,12 +2,15 @@ function formataCpf(id) {
     const cpfInput = document.getElementById(id)
     let cpf = cpfInput.value
 
-    if (cpf.length > 11) {
-        cpf = cpf.substring(0, 11);
+    if (cpf.length > 14) {
+        cpf = cpf.substring(0, 14);
     }
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    if(cpf.length==11){
+
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    }
 
 
     cpfInput.value = cpf

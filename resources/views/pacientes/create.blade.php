@@ -39,7 +39,7 @@
                     <input type="text" disabled class="form-control" id="endereco">
                     <input type="hidden" class="form-control" id="endereco-hdn" name="endereco">
                     <label for="numero" class="form-label"> Número: </label>
-                    <input type="number" class="form-control" name="numero" >
+                    <input type="number" class="form-control" name="numero" required>
                     <div id="container-responsavel">
 
                     </div>
